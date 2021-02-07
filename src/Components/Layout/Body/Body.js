@@ -1,14 +1,17 @@
 import React from 'react';
-import { ReactComponent as Surprise } from 'media/svg/Surprise.svg';
-
+import './Body.css'
 function Body(props) {
   return (
-    <body
+    <div
+      id='body'
       style={{
-        background: `url(${Surprise})`
+        background: 'url(media/svg/Surprise.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: 'black'
       }}>
       {props.children}
-    </body>
+    </div>
   );
 }
 
