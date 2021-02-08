@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { randomClassBackground } from '../../Services/BackgroundServices'
+import Black from '../BlackGif/Black'
 import './Quadrant.css'
+
 class Quadrant extends Component {
   constructor(props) {
     super(props);
   }
   state = {
     renderArr: [],
-    currentArr: [],
     upcoming: [],
     multiplier: 1
   }
@@ -40,14 +41,14 @@ class Quadrant extends Component {
       let newX = Math.floor(Math.random() * 101)
       let newY = Math.floor(Math.random() * 101)
       let rc = randomClassBackground()
-      let image = {
+      let imageInfo = {
         'key': key,
         'x': newX,
         'y': newY,
         'url': `media/Black/${url}.gif`,
         'size': rc
       }
-      final.push(image)
+      final.push(imageInfo)
       nUpcoming.shift()
       ntbrCopy--
     }
@@ -60,21 +61,14 @@ class Quadrant extends Component {
   render() {
     let renderOnPage = this.state.renderArr
     return (
-      <>
-        {renderOnPage.map(el => {
-          <img
-            src={`${el.url}`}
-            key={el.key}
-            className={el.size}
-            alt=''
-            style={{
-              position: 'absolute',
-              top: `${el.y}vh`,
-              left: `${el.x}vw`,
-              zIndex: 2
-            }} />
-        })}
-      </>
+      <div
+        className='quad'>
+        {renderOnPage.map(el =>
+          <Black
+            {...el}
+          />
+        )}
+      </div>
     );
   }
 }

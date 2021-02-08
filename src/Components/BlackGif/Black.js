@@ -1,40 +1,50 @@
 import React, { Component } from 'react';
-import { randomClassBackground } from '../../Services/BackgroundServices'
-class Black extends Component {
+import Quadrant from '../Quadrants/Quadrant';
+import './Black.css'
+  class Black extends Quadrant {
   constructor(props) {
     super(props);
   }
   state = {
-    url: '',
-    x: '',
-    y: '',
-    class: ''
+    visible: true
   }
   componentDidMount() {
-    let number = Math.floor(Math.random() * 8)
-    let newX = Math.floor(Math.random() * 101)
-    let newY = Math.floor(Math.random() * 101)
-    let newUrl = `media/Black/${number}.gif`
-    let rc = randomClassBackground()
-    this.setState({
-      url: newUrl,
-      x: newX,
-      y: newY,
-      class: rc
-    })
+    setInterval(() => { this.toggleVisibility() }, 10000)
+  }
+  toggleVisibility = () => {
+    const s = this.state
+    if (s.visible === false) {
+      this.setState({
+        visible: true
+      })
+    } else {
+      this.setState({
+        visible: false
+      })
+    }
   }
   render() {
-    let s = this.state
+    const s = this.state
+    const p = this.props
     return (
-      <img
-        src={s.url}
-        className={s.class}
-        style={{
-          position: 'absolute',
-          top: `${s.y}vh`,
-          left: `${s.x}vw`
-        }}
-      />
+    <>
+      {
+        s.visible ?
+          <img
+            src={p.url}
+            alt=''
+            className={p.size}
+            key={p.key}
+            src={{
+              top: `${p.y}%`,
+              left: `${p.x}%`
+            }}
+          />
+          :
+          <>
+          </>
+        }
+      </>
     );
   }
 }
