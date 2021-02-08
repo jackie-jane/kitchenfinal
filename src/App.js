@@ -1,14 +1,14 @@
 
 import Body from './Components/Layout/Body/Body'
 import Emoji from './Components/Emoji/Emoji'
-import QuadrentA from './Components/Quadrants/QuadrantA'
 import './App.css'
+import AggregateOne from './Components/Layout/Aggregtate/AggregateOne'
 function App() {
   return (
     <>
-      <Body/>
+      <Body />
       <Emoji />
-      <QuadrentA/>
+      <AggregateOne />
     </>
   )
 }
