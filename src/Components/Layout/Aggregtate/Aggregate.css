@@ -1,4 +1,9 @@
-.my-masonry-grid {
+#aggregateOne {
+height: 50vh;
+width: 100vw;
+top: 0
+}
+.my-masonry-grid-one {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;

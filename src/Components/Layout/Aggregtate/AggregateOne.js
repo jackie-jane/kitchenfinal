@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { createKeyArr, imgGenerator, updateRender } from '../../../Services/BackgroundServices'
 import Masonry from 'react-masonry-css'
+import Black from '../../BlackGif/Black'
+import './Aggregate.css'
 
 class AggregateOne extends Component {
   state = {
@@ -8,63 +11,40 @@ class AggregateOne extends Component {
     multiplier: 1
   }
   componentDidMount() {
-    const list = Array.from(Array(50).keys());
-    let keyList = []
-    list.forEach(el => {
-      keyList.push(`1010${el}`)
-    })
-    this.handleIntreval()
+    const keyList = createKeyArr('1010')
+    let res = imgGenerator()
+    setInterval(() => { this.handleUpdate() }, res)
     this.setState({
       upcoming: keyList
     })
   }
-  handleIntreval = () => {
-    let n = Math.ceil((Math.random() * 3))
-    let time = (n * 5000) + 30000
-    setInterval(() => { this.updateRender() }, time)
-  }
-  updateRender = () => {
-    let n = Math.ceil((Math.random() * 3))
-    let x = this.state.multiplier
-    let numberToBeRendered = n + x
-    let ntbrCopy = numberToBeRendered
-    let nUpcoming = this.state.upcoming
-    let final = this.state.renderArr
-    while (ntbrCopy > 1) {
-      let key = nUpcoming[0]
-      let url = Math.floor(Math.random() * 8)
-      let newX = Math.floor(Math.random() * 101)
-      let newY = Math.floor(Math.random() * 101)
-      let rc = randomClassBackground()
-      let imageInfo = {
-        'id': key,
-        'x': newX,
-        'y': newY,
-        'url': `media/Black/${url}.gif`,
-        'size': rc
-      }
-      final.push(imageInfo)
-      nUpcoming.shift()
-      ntbrCopy--
-    }
+
+  handleUpdate = () => {
+    const s = this.state
+    let res = updateRender(s.multiplier, s.upcoming, s.renderArr)
     this.setState({
-      renderArr: final,
-      upcoming: nUpcoming,
-      multiplier: numberToBeRendered
+      renderArr: res.final,
+      upcoming: res.keyList,
+      multiplier: res.multiplier
     })
   }
+
   render() {
-    let rArr = this.state.renderArr
+    let s = this.state
     return (
-      <div class='aggregateOne'>
+      <div id='aggregateOne'>
         <Masonry
           breakpointCols={4}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column">
-          {rArr.map(el => {
-            <img
+          className="my-masonry-grid-one"
+          columnClassName="my-masonry-grid_column"
+          style={{
+            height: '100%',
+            width: '100%',
+          }}>
+          {s.renderArr.map(el => {
+            <Black
               src={el.url}
-              id={el.id}
+              key={el.id}
               className={el.size}
             />
           })}
