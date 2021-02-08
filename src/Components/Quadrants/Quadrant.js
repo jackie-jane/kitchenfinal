@@ -4,9 +4,6 @@ import Black from '../BlackGif/Black'
 import './Quadrant.css'
 
 class Quadrant extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     renderArr: [],
     upcoming: [],
@@ -15,10 +12,10 @@ class Quadrant extends Component {
   componentDidMount() {
     const list = Array.from(Array(100).keys());
     let keyList = []
-    list.map(el => {
+    list.forEach(el => {
       keyList.push(`1010${el}`)
     })
-    { this.handleIntreval() }
+    this.handleIntreval()
     this.setState({
       upcoming: keyList
     })

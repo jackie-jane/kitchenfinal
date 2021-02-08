@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import Quadrant from '../Quadrants/Quadrant';
 import './Black.css'
-class Black extends Quadrant {
-  constructor(props) {
-    super(props);
-  }
+class Black extends Component {
   state = {
     visible: true
   }
