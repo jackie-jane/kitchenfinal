@@ -2,4 +2,5 @@
   min-height: 150vh;
   min-width: 125vw;
   overflow: hidden;
+  z-index: 0;
 }

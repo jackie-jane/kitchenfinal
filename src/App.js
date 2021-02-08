@@ -5,9 +5,11 @@ import Black from './Components/BlackGif/Black';
 import Quadrant from './Components/Quadrants/Quadrant'
 function App() {
   return (
-    <Body>
-      <Quadrant/>
-    </Body>
+    <>
+      <Body >
+        <Quadrant />
+      </Body>
+    </>
   )
 }
 

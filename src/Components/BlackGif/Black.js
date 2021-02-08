@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { randomClassBackground } from '../../Services/BackgroundServices'
-import './Black.css'
 class Black extends Component {
   constructor(props) {
     super(props);
