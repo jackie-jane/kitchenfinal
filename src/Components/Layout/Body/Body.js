@@ -5,11 +5,11 @@ function Body(props) {
     <div
       id='body'
       style={{
-        background: 'url(media/svg/Surprise.svg)',
-        backgroundSize: 'cover',
+        backgroundImage: 'url(media/svg/Surprise.svg)',
+        backgroundSize: '75%',
         backgroundPosition: 'center',
-        repeat: 'no repeat',
-        backgroundColor: 'black'
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'rgb(36, 33, 33)'
       }}>
       {props.children}
     </div>

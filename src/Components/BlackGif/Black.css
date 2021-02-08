@@ -1,5 +1,5 @@
 img {
-  position: absolute
+  position: relative;
 }
 .a {
   width: 5px;

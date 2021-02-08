@@ -1,6 +1,7 @@
 #body {
-  min-height: 150%;
-  min-width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: fit-content;
   overflow-x: hidden;
   z-index: 0;
 }

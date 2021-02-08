@@ -1,11 +1,14 @@
 
 import Body from './Components/Layout/Body/Body'
-import Quadrant from './Components/Quadrants/Quadrant'
+import QuadrantA from './Components/Quadrants/QuadrantsA/QuadrantAOne'
+import QuadrantB from './Components/Quadrants/QuadrantB'
+import './App.css'
 function App() {
   return (
     <>
       <Body >
-        <Quadrant />
+        <QuadrantA />
+        <QuadrantB />
       </Body>
     </>
   )

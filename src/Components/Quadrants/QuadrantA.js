@@ -3,7 +3,7 @@ import { randomClassBackground } from '../../Services/BackgroundServices'
 import Black from '../BlackGif/Black'
 import './Quadrant.css'
 
-class Quadrant extends Component {
+class QuadrantA extends Component {
   state = {
     renderArr: [],
     upcoming: [],
@@ -75,4 +75,4 @@ class Quadrant extends Component {
   }
 }
 
-export default Quadrant;
+export default QuadrantA;
