@@ -42,7 +42,7 @@ class Quadrant extends Component {
       let newY = Math.floor(Math.random() * 101)
       let rc = randomClassBackground()
       let imageInfo = {
-        'key': key,
+        'id': key,
         'x': newX,
         'y': newY,
         'url': `media/Black/${url}.gif`,
@@ -65,7 +65,12 @@ class Quadrant extends Component {
         className='quad'>
         {renderOnPage.map(el =>
           <Black
-            {...el}
+            x={el.x}
+            y={el.y}
+            src={el.url}
+            size={el.size}
+            id={el.id}
+            alt=''
           />
         )}
       </div>

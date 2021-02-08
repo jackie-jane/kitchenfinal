@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Quadrant from '../Quadrants/Quadrant';
 import './Black.css'
-  class Black extends Quadrant {
+class Black extends Quadrant {
   constructor(props) {
     super(props);
   }
@@ -27,22 +27,21 @@ import './Black.css'
     const s = this.state
     const p = this.props
     return (
-    <>
-      {
-        s.visible ?
-          <img
-            src={p.url}
-            alt=''
-            className={p.size}
-            key={p.key}
-            src={{
-              top: `${p.y}%`,
-              left: `${p.x}%`
-            }}
-          />
-          :
-          <>
-          </>
+      <>
+        {
+          s.visible ?
+            <img
+              src={p.src}
+              alt={p.al}
+              className={p.size}
+              style={{
+                top: `${p.y}%`,
+                left: `${p.x}%`
+              }}
+            />
+            :
+            <>
+            </>
         }
       </>
     );
