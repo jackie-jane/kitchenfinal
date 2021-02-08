@@ -1,11 +1,12 @@
   #quadA {
+    position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100vh;
+    background: none;
     z-index: 1;
     overflow-x: hidden;
-    overflow-y: hidden;
   }
   #quadB {
     top: 100vh;

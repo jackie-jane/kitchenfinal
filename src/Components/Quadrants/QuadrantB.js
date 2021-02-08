@@ -40,7 +40,7 @@ class QuadrantB extends Component {
       let key = nUpcoming[0]
       let url = Math.floor(Math.random() * 8)
       let newX = Math.floor(Math.random() * 101)
-      let newY = Math.floor(Math.random() * 101)
+      let newY = Math.floor(Math.random() * 101) + 100
       let rc = randomClassBackground()
       let imageInfo = {
         'id': key,
