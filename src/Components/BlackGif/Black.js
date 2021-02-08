@@ -1,40 +1,41 @@
 import React, { Component } from 'react';
-import { ArrayBuilder, iterateArray } from '../../Services/Shared'
-
+import { randomClassBackground } from '../../Services/BackgroundServices'
+import './Black.css'
 class Black extends Component {
   constructor(props) {
     super(props);
   }
   state = {
-    upcomingArr: [],
-    renderArr: [],
-    current: ''
+    url: '',
+    x: '',
+    y: '',
+    class: ''
   }
   componentDidMount() {
-    let newUpcoming = ArrayBuilder(8, 'Black', 100)
-    let newCurrent = newUpcoming[0]
-    newUpcoming.push(newCurrent)
-    newUpcoming.shift()
-    { this.updateArray() }
+    let number = Math.floor(Math.random() * 8)
+    let newX = Math.floor(Math.random() * 101)
+    let newY = Math.floor(Math.random() * 101)
+    let newUrl = `media/Black/${number}.gif`
+    let rc = randomClassBackground()
     this.setState({
-      upcomingArr: newUpcoming,
-      current: newCurrent
-    })
-  }
-  updateArray = () => {
-    let s = this.state
-    let response = iterateArray(s.upcomingArr, s.renderArr, s.current)
-    this.setState({
-      upcomingArr: response.upcoming,
-      renderArr: response.render,
-      current: response.current
+      url: newUrl,
+      x: newX,
+      y: newY,
+      class: rc
     })
   }
   render() {
+    let s = this.state
     return (
-      <div>
-
-      </div>
+      <img
+        src={s.url}
+        className={s.class}
+        style={{
+          position: 'absolute',
+          top: `${s.y}vh`,
+          left: `${s.x}vw`
+        }}
+      />
     );
   }
 }
