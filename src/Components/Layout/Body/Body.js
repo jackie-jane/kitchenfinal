@@ -6,7 +6,7 @@ function Body(props) {
   return (
     <div
       id='body'>
-      {/* <Gator/> */}
+      <Gator/>
     </div>
   );
 }
