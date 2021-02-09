@@ -4,19 +4,44 @@ class Emoji extends Component {
   state = {
     y: '',
     windowH: '',
-    WindowW: ''
+    WindowW: '',
+    num: ''
   }
+
   componentDidMount() {
     setInterval(() => { this.handleScroll() }, 1000);
+    const w = window
+    this.setState({
+      y: w.pageYOffset,
+      windowH: w.innerHeight,
+      WindowW: w.innerWidth,
+      num: w.innerHeight - w.pageYOffset
+    })
   }
+
+  autoScroll = () => {
+    let n = this.state.num
+    if (n < 600) {
+      console.log('bang')
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+
   handleScroll = () => {
+    setInterval(() => { this.autoScroll() }, 1000)
     let w = window
     this.setState({
       y: w.pageYOffset,
       windowH: w.innerHeight,
-      WindowW: w.innerWidth
+      WindowW: w.innerWidth,
+      num: w.innerHeight - w.pageYOffset
     })
   }
+
   render() {
     const s = this.state
     let size = 50 + (s.y / 3)
