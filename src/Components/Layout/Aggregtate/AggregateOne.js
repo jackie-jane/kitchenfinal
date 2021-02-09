@@ -3,7 +3,7 @@ import { createKeyArr, randomClassBackground } from '../../../Services/Backgroun
 import Masonry from 'react-masonry-css'
 import Black from '../../BlackGif/Black'
 import './Aggregate.css'
-class AggregateOne extends Component {
+class Aggregate extends Component {
   state = {
     renderArr: [],
     upcoming: [],
@@ -28,15 +28,18 @@ class AggregateOne extends Component {
     while (ntbrc > 1) {
       let k = uCopy[0]
       uCopy.shift()
-      let url = Math.floor(Math.random() * 8)
+      let urlNum = Math.floor(Math.random() * 8)
+      let url = `media/Black/${urlNum}.gif`
       let rc = randomClassBackground()
-      newRender.push({
-        'id': k,
-        'url': url,
-        'size': rc
-      })
+      let imgInfo = {
+        src: url,
+        size: rc,
+        id: k
+      }
+      newRender.push(imgInfo)
       ntbrc--
     }
+    console.log(newRender)
     this.setState({
       renderArr: final.concat(newRender),
       upcoming: uCopy,
@@ -44,27 +47,21 @@ class AggregateOne extends Component {
     })
   }
   render() {
-    let s = this.state
+    let render = this.state.renderArr
     return (
-      <div id='aggregateOne'>
-        <Masonry
-          breakpointCols={4}
-          className="my-masonry-grid-one"
-          columnClassName="my-masonry-grid_column"
-          style={{
-            height: '100%',
-            width: '100%',
-          }}>
-          {s.renderArr.map(el => {
-            <Black
-              src={el.url}
-              key={el.id}
-              className={el.size}
-            />
-          })}
-        </Masonry>
-      </div>
+      <Masonry
+        breakpointCols={3}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column">
+        {render.map(el =>
+          <Black
+            src={el.src}
+            key={el.id}
+            className={el.size}
+            alt=''
+          />)}
+      </Masonry>
     );
   }
 }
-export default AggregateOne;
+export default Aggregate;

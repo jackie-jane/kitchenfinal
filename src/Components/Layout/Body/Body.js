@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AggregateOne from '../Aggregtate/AggregateOne'
+import Aggregate from '../Aggregtate/AggregateOne'
 import './Body.css'
 
 function Body(props) {
   return (
     <div
       id='body'>
-      <AggregateOne/>
+      <Aggregate/>
     </div>
   );
 }
