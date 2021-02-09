@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Gator from '../Aggregtate/Gator'
 import './Body.css'
+
 function Body(props) {
   return (
     <div
-      id='body'
-      style={{
-        background: 'url(media/svg/Surprise.svg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundColor: 'black'
-      }}>
-      {props.children}
+      id='body'>
+      {/* <Gator/> */}
     </div>
   );
 }

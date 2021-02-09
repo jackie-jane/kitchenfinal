@@ -1,16 +1,14 @@
 
 import Body from './Components/Layout/Body/Body'
-import './App.css';
-import Black from './Components/BlackGif/Black';
-import Quadrant from './Components/Quadrants/Quadrant'
+import Emoji from './Components/Emoji/Emoji'
+import './App.css'
+import Aggregate from './Components/Layout/Aggregtate/AggregateOne'
 function App() {
   return (
     <>
-      <Body >
-        <Quadrant />
-      </Body>
+      <Emoji />
+      <Body />
     </>
   )
 }
-
 export default App;
