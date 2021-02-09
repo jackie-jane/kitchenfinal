@@ -28,13 +28,15 @@ class Emoji extends Component {
     return (
       <img
         src='https://i.imgur.com/9DhSryH.png'
+        alt='surprised emoji'
         style={{
           position: 'fixed',
           width: `${size}px`,
           height: `${size}px`,
           top: `${ct}px`,
           left: `${cl}px`,
-          transition: `all .5s ease`
+          transition: `all .1s ease`,
+          zIndex: 0
         }}
       />
     );

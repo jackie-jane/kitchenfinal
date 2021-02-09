@@ -38,7 +38,6 @@ class Gator extends Component {
     if (x > 0) {
       let backA = this.state.backgroundArr
       let rendA = this.state.renderArr
-      let i = 3
       let finalRend = []
       for (let i = 0; i < 3; i++) {
         finalRend.push(backA[0])
