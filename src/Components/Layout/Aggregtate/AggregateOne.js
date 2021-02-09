@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { createKeyArr, imgGenerator, updateRender } from '../../../Services/BackgroundServices'
+import { createKeyArr, randomClassBackground } from '../../../Services/BackgroundServices'
 import Masonry from 'react-masonry-css'
 import Black from '../../BlackGif/Black'
 import './Aggregate.css'
-
 class AggregateOne extends Component {
   state = {
     renderArr: [],
@@ -12,8 +11,8 @@ class AggregateOne extends Component {
   }
   componentDidMount() {
     const keyList = createKeyArr('1010')
-    let res = imgGenerator()
-    setInterval(() => { this.handleUpdate() }, res)
+    let t = (Math.ceil(Math.random() * 3) * 5000) + 7000
+    setInterval(() => { this.handleUpdate() }, t)
     this.setState({
       upcoming: keyList
     })
@@ -21,14 +20,29 @@ class AggregateOne extends Component {
 
   handleUpdate = () => {
     const s = this.state
-    let res = updateRender(s.multiplier, s.upcoming, s.renderArr)
+    let ntbr = Math.ceil((Math.random() * 3)) + s.multiplier
+    let ntbrc = ntbr
+    let final = s.renderArr
+    let newRender = []
+    let uCopy = s.upcoming
+    while (ntbrc > 1) {
+      let k = uCopy[0]
+      uCopy.shift()
+      let url = Math.floor(Math.random() * 8)
+      let rc = randomClassBackground()
+      newRender.push({
+        'id': k,
+        'url': url,
+        'size': rc
+      })
+      ntbrc--
+    }
     this.setState({
-      renderArr: res.final,
-      upcoming: res.keyList,
-      multiplier: res.multiplier
+      renderArr: final.concat(newRender),
+      upcoming: uCopy,
+      multiplier: ntbr
     })
   }
-
   render() {
     let s = this.state
     return (

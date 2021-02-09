@@ -5,16 +5,11 @@ export const randomClassBackground = () => {
 
 export const createKeyArr = (prefix) => {
   const list = Array.from(Array(50).keys());
-  let keyList = list.forEach(el => {
-    el = `${prefix}${el}`
+  let keyList = []
+  list.forEach(el => {
+    keyList.push(`${prefix}${el}`)
   })
   return keyList
-}
-
-export const imgGenerator = () => {
-  let n = Math.ceil((Math.random() * 3))
-  let time = (n * 5000) + 7000
-  return { time }
 }
 
 export const updateRender = (multiplier, uArray, renderArr) => {
