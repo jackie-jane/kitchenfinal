@@ -1,0 +1,10 @@
+#footer {
+position: relative;
+height: 50vh;
+width: 100vw;
+bottom: 0;
+left: 0;
+background: white;
+z-index: 2;
+box-shadow: -1px -1px 25px grey;
+}

@@ -1,13 +1,15 @@
 
 import Body from './Components/Layout/Body/Body'
 import Emoji from './Components/Emoji/Emoji'
+import Footer from './Components/Layout/Footer/Footer'
 import './App.css'
-import Aggregate from './Components/Layout/Aggregtate/AggregateOne'
+
 function App() {
   return (
     <>
-      <Emoji />
       <Body />
+      <Footer />
+      <Emoji />
     </>
   )
 }
