@@ -21,13 +21,13 @@ class Gator extends Component {
       bId.shift()
     })
     backArr.forEach(el => {
-      finalRend.push({
+      finalBack.push({
         key: el,
         id: bId[0]
       })
       bId.shift()
     })
-    setIntreval(() => { this.backgroundUpdate() }, 50000)
+    setInterval(() => { this.backgroundUpdate() }, 50000)
     this.setState({
       backgroundArr: finalBack,
       renderArr: finalRend
@@ -40,7 +40,7 @@ class Gator extends Component {
       let i = 3
       while (i < 0) {
         rendA.push(backA[0])
-        backA.shift
+        backA.shift()
         i--
       }
       this.setState({

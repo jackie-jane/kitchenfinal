@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Aggregate from '../Aggregtate/AggregateOne'
+import Gator from '../Aggregtate/Gator'
 import './Body.css'
 
 function Body(props) {
   return (
     <div
       id='body'>
-      <Aggregate/>
+      <Gator/>
     </div>
   );
 }

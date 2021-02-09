@@ -54,7 +54,7 @@ class Aggregate extends Component {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column">
         {render.map(el =>
-          <Black
+          <img
             src={el.src}
             key={el.id}
             className={el.size}
