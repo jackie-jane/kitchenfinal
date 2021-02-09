@@ -27,25 +27,26 @@ class Gator extends Component {
       })
       bId.shift()
     })
-    setInterval(() => { this.backgroundUpdate() }, 50000)
+    setInterval(() => { this.backgroundUpdate() }, 30000)
     this.setState({
       backgroundArr: finalBack,
       renderArr: finalRend
     })
   }
   backgroundUpdate = () => {
-    if (this.state.backgroundNumber < 45) {
+    let x = this.state.backgroundArr.length
+    if (x > 0) {
       let backA = this.state.backgroundArr
       let rendA = this.state.renderArr
       let i = 3
-      while (i < 0) {
-        rendA.push(backA[0])
+      let finalRend = []
+      for (let i = 0; i < 3; i++) {
+        finalRend.push(backA[0])
         backA.shift()
-        i--
       }
       this.setState({
         backgroundArr: backA,
-        renderArr: rendA
+        renderArr: rendA.concat(finalRend)
       })
     }
   }

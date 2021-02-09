@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './Black.css'
 class Black extends Component {
   state = {
-    visible: true
+    visible: true,
   }
   componentDidMount() {
-    setInterval(() => { this.toggleVisibility() }, 10000)
+    let x = Math.ceil(Math.random() * 10) * 1000
+    x += 5000
+    setTimeout(() => { this.toggleVisibility() }, x)
   }
   toggleVisibility = () => {
     const s = this.state
@@ -28,12 +30,8 @@ class Black extends Component {
           s.visible ?
             <img
               src={p.src}
-              alt={p.al}
+              alt=''
               className={p.size}
-              style={{
-                top: `${p.y}%`,
-                left: `${p.x}%`
-              }}
             />
             :
             <>

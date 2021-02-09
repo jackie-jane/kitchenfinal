@@ -6,10 +6,9 @@ import Aggregate from './Components/Layout/Aggregtate/AggregateOne'
 function App() {
   return (
     <>
-      <Body />
       <Emoji />
+      <Body />
     </>
   )
 }
-
 export default App;

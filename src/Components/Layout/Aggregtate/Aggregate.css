@@ -11,13 +11,13 @@ flex-wrap: wrap;
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -30px; /* gutter size offset */
-  height: 33vh;
-  width: 33vw;
+  margin-left: -1vw; /* gutter size offset */
+  height: 34vh;
+  width: 34vw;
   overflow: hidden
 }
 .my-masonry-grid_column {
-  padding-left: 30px; /* gutter size */
+  padding-left: 10px; /* gutter size */
   background-clip: padding-box;
 }
 .a {

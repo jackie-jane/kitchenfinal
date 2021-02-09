@@ -54,11 +54,10 @@ class Aggregate extends Component {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column">
         {render.map(el =>
-          <img
+          <Black
             src={el.src}
             key={el.id}
-            className={el.size}
-            alt=''
+            size={el.size}
           />)}
       </Masonry>
     );
