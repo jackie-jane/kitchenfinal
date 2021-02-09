@@ -3,8 +3,8 @@ export const randomClassBackground = () => {
   return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
 
-export const createKeyArr = (prefix) => {
-  const list = Array.from(Array(50).keys());
+export const createKeyArr = (prefix, total) => {
+  const list = Array.from(Array(total).keys());
   let keyList = []
   list.forEach(el => {
     keyList.push(`${prefix}${el}`)

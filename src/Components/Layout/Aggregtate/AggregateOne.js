@@ -10,7 +10,7 @@ class Aggregate extends Component {
     multiplier: 1
   }
   componentDidMount() {
-    const keyList = createKeyArr('1010')
+    const keyList = createKeyArr(1010, 10)
     let t = (Math.ceil(Math.random() * 3) * 5000) + 7000
     setInterval(() => { this.handleUpdate() }, t)
     this.setState({
