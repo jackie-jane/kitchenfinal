@@ -8,26 +8,21 @@ class Gator extends Component {
     renderArr: []
   }
   componentDidMount() {
-    let rendArr = createKeyArr(1212, 9)
-    let backArr = createKeyArr(1111, 12)
-    let bId = createKeyArr(0, 21)
+    let rendArr = createKeyArr(1212, 4)
+    let backArr = createKeyArr(1111, 8)
     let finalRend = []
     let finalBack = []
     rendArr.forEach(el => {
       finalRend.push({
         key: el,
-        id: bId[0]
       })
-      bId.shift()
     })
     backArr.forEach(el => {
       finalBack.push({
-        key: el,
-        id: bId[0]
+        key: el
       })
-      bId.shift()
     })
-    setInterval(() => { this.backgroundUpdate() }, 20000)
+    setInterval(() => { this.backgroundUpdate() }, 30000)
     this.setState({
       backgroundArr: finalBack,
       renderArr: finalRend
@@ -39,7 +34,7 @@ class Gator extends Component {
       let backA = this.state.backgroundArr
       let rendA = this.state.renderArr
       let finalRend = []
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         finalRend.push(backA[0])
         backA.shift()
       }

@@ -26,7 +26,7 @@ class Emoji extends Component {
     let ct = (s.windowH / 2) - centerSize
     return (
       <img
-        src='https://i.imgur.com/9DhSryH.png'
+        src='media/9DhSryH.png'
         alt='surprised emoji'
         style={{
           position: 'fixed',

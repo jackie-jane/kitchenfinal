@@ -3,18 +3,27 @@ import './Footer.css'
 
 class Footer extends Component {
   state = {
-    text: false
+    visible: false,
+    text: false,
+    y: ''
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.autoScroll);
   }
 
   autoScroll = () => {
-    let n = this.state.num
-    if (n < 600) {
-      console.log('bang')
+    let y = window.pageYOffset
+    let w = window.innerHeight
+    if ( (w * 3) - y < w ) {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
+      this.setState({
+        text: true
+      })
     }
   }
 
