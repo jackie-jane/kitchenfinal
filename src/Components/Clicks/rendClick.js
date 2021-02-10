@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { randomClassBackground } from '../../Services/BackgroundServices';
 import '../BlackGif/Black.css'
 
 class RendClick extends Component {

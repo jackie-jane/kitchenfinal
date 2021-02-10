@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Emoji from '../../Emoji/Emoji'
 import Gator from '../Aggregtate/Gator'
 import Footer from '../Footer/Footer'
-import Clicks from '../../Clicks/Clicks'
 import './Body.css'
+import Clicks from '../../Clicks/Clicks';
 
 class Body extends Component {
   state = {
     footer: false,
-    check: true
+    check: true,
   }
   componentDidMount() {
     window.addEventListener('scroll', this.renderFooter);
@@ -26,8 +26,9 @@ class Body extends Component {
   }
   render() {
     return (
-      <div id='body'>
-        <Clicks />
+      <div id='body'
+        onClick={this.handleClick}>
+        <Clicks/>
         <Emoji
           {...this.state.emojiSize}
         />
