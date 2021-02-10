@@ -80,3 +80,8 @@ img {
 .z{
   width: 140px;
 }
+.phaseOut{
+  height: 0px;
+  width: 0px;
+  background: none;
+}
