@@ -17,11 +17,11 @@ class Body extends Component {
     })
   }
   handleScroll = () => {
-    
+
   }
   render() {
     return (
-      <div id='Body'>
+      <div id='body'>
         <Emoji
           {...this.state.emojiSize}
         />
