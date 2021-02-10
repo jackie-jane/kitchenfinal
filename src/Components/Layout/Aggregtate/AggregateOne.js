@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { createKeyArr, randomClassBackground } from '../../../Services/BackgroundServices'
 import Masonry from 'react-masonry-css'
 import Black from '../../BlackGif/Black'
-import LazyLoad from 'react-lazyload';
 import './Aggregate.css'
 
 class Aggregate extends Component {
