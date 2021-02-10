@@ -7,12 +7,18 @@ class Black extends Component {
   }
   componentDidMount() {
     let x = (Math.ceil(Math.random() * 10) * 6000) + 5000
-    setTimeout(() => { this.toggleVisibility() }, x)
+    setIntreval(() => { this.toggleVisibility() }, x)
   }
   toggleVisibility = () => {
-    this.setState({
-      visible: false
-    })
+    if (this.state.visible === true) {
+      this.setState({
+        visible: false
+      })
+    } else {
+      this.setState({
+        visible: true
+      })
+    }
   }
   render() {
     const s = this.state
