@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createKeyArr, randomClassBackground } from '../../../Services/BackgroundServices'
 import Masonry from 'react-masonry-css'
 import Black from '../../BlackGif/Black'
+import LazyLoad from 'react-lazyload';
 import './Aggregate.css'
 class Aggregate extends Component {
   state = {
@@ -10,7 +11,7 @@ class Aggregate extends Component {
     multiplier: 1
   }
   componentDidMount() {
-    const keyList = createKeyArr(1010, 10)
+    const keyList = createKeyArr(1010, 5)
     let t = (Math.ceil(Math.random() * 3) * 5000) + 7000
     setInterval(() => { this.handleUpdate() }, t)
     this.setState({
@@ -48,17 +49,22 @@ class Aggregate extends Component {
   render() {
     let render = this.state.renderArr
     return (
-      <Masonry
-        breakpointCols={3}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column">
-        {render.map(el =>
-          <Black
-            src={el.src}
-            key={el.id}
-            size={el.size}
-          />)}
-      </Masonry>
+      <LazyLoad
+        offset={400}
+        once={true}>
+        <Masonry
+          breakpointCols={3}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column">
+          {render.map(el =>
+            <Black
+              src={el.src}
+              key={el.id}
+              size={el.size}
+            />
+          )}
+        </Masonry>
+      </LazyLoad>
     );
   }
 }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-
 class Emoji extends Component {
   state = {
-    y: 0,
-    windowH: 766,
-    WindowW: 1351,
+    y: '',
+    windowH: '',
+    WindowW: '',
   }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll()
   }
   handleScroll = () => {
     let w = window
@@ -34,7 +34,7 @@ class Emoji extends Component {
           height: `${size}px`,
           top: `${ct}px`,
           left: `${cl}px`,
-          transition: `all .5s ease`,
+          transition: `all 2s ease-in-out`,
           zIndex: 0
         }}
       />
