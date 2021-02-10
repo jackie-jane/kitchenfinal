@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './Black.css'
-
+import lazyload from 'react-lazyload'
+import LazyLoad from 'react-lazyload';
 class Black extends Component {
   state = {
     visible: true,
   }
   componentDidMount() {
-    let x = (Math.ceil(Math.random() * 10) * 6000) + 5000
-    setIntreval(() => { this.toggleVisibility() }, x)
+    let x = Math.ceil(Math.random() * 10) * 1000
+    x +=
+      setInterval(() => { this.toggleVisibility() }, x + 5000)
   }
   toggleVisibility = () => {
-    if (this.state.visible === true) {
+    const s = this.state
+    if (s.visible === true) {
       this.setState({
         visible: false
       })

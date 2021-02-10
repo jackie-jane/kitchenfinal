@@ -11,7 +11,7 @@ class Body extends Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.renderFooter);
-    setTimeout(() => { this.renderFooter() }, 216000)
+    setTimeout(() => { this.renderFooter() }, 90000)
   }
   renderFooter = () => {
     let y = window.pageYOffset
