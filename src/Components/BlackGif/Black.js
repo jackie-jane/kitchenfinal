@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazyload';
 import './Black.css'
+
 class Black extends Component {
   state = {
     visible: true,
@@ -20,11 +22,16 @@ class Black extends Component {
       <>
         {
           s.visible ?
-            <img
-              src={p.src}
-              alt=''
-              className={p.size}
-            />
+            <LazyLoad
+              offset={400}
+              unmountIfInvisible={true}
+            >
+              <img
+                src={p.src}
+                alt=''
+                className={p.size}
+              />
+            </LazyLoad>
             :
             null
         }
