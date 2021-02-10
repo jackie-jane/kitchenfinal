@@ -7,17 +7,21 @@ import './Body.css'
 class Body extends Component {
   state = {
     footer: false,
+    check: true
   }
   componentDidMount() {
+    window.addEventListener('scroll', this.renderFooter);
     setTimeout(() => { this.renderFooter() }, 216000)
   }
   renderFooter = () => {
-    this.setState({
-      footer: true
-    })
-  }
-  handleScroll = () => {
-
+    let y = window.pageYOffset
+    let w = window.innerHeight
+    if (y > w * 2 && this.state.check === true) {
+      this.setState({
+        footer: true,
+        check: false
+      });
+    }
   }
   render() {
     return (
@@ -29,8 +33,7 @@ class Body extends Component {
         {this.state.footer ?
           < Footer />
           :
-          <>
-          </>
+          null
         }
       </div>
     );

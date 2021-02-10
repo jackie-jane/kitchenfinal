@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazyload';
 import './Black.css'
 
 class Black extends Component {
@@ -22,16 +21,11 @@ class Black extends Component {
       <>
         {
           s.visible ?
-            <LazyLoad
-              offset={400}
-              unmountIfInvisible={true}
-            >
-              <img
-                src={p.src}
-                alt=''
-                className={p.size}
-              />
-            </LazyLoad>
+            <img
+              src={p.src}
+              alt=''
+              className={p.size}
+            />
             :
             null
         }

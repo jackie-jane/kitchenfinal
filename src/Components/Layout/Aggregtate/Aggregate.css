@@ -12,89 +12,11 @@ flex-wrap: wrap;
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
   margin-left: -1vw; /* gutter size offset */
-  height: 34vh;
-  width: 34vw;
+  height: 50vh;
+  width: 50vw;
   overflow: hidden
 }
 .my-masonry-grid_column {
   padding-left: 10px; /* gutter size */
   background-clip: padding-box;
-}
-.a {
-  width: 5px;
-}
-.b {
-  width: 10px;
-}
-.c {
-  width: 15px;
-}
-.d {
-  width: 20px;
-}
-.e {
-  width: 25px;
-}
-.f {
-  width: 30px;
-}
-.g {
-  width: 35px;
-}
-.h {
-  width: 40px;
-}
-.i {
-  width: 45px;
-}
-.j {
-  width: 50px;
-}
-.k {
-  width: 60px;
-}
-.l {
-  width: 66.6px;
-}
-.m {
-  width: 70px;
-}
-.n{
-  width: 75px;
-}
-.o {
-  width: 80px;
-}
-.p {
-  width: 85px;
-}
-.q{
-  width: 90px;
-}
-.r {
-  width: 100px;
-}
-.s {
-  width: 105px;
-}
-.t {
-  width: 110px;
-}
-.u{
-  width: 115px;
-}
-.v {
-  width: 120px;
-}
-.w{
-  width: 125px;
-}
-.x{
-  width: 130px;
-}
-.y{
-  width: 135px;
-}
-.z{
-  width: 140px;
 }
