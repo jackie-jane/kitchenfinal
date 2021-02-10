@@ -6,11 +6,9 @@ class Emoji extends Component {
     windowH: 766,
     WindowW: 1351,
   }
-
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
-
   handleScroll = () => {
     let w = window
     this.setState({
@@ -20,10 +18,9 @@ class Emoji extends Component {
       num: w.innerHeight - w.pageYOffset
     })
   }
-
   render() {
     const s = this.state
-    let size = 50 + (s.y / 3)
+    let size = 25 + s.y
     let centerSize = size / 2
     let cl = (s.WindowW / 2) - centerSize
     let ct = (s.windowH / 2) - centerSize
@@ -37,7 +34,7 @@ class Emoji extends Component {
           height: `${size}px`,
           top: `${ct}px`,
           left: `${cl}px`,
-          transition: `all .1s ease`,
+          transition: `all .5s ease`,
           zIndex: 0
         }}
       />
