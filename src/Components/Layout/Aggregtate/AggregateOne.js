@@ -39,7 +39,6 @@ class Aggregate extends Component {
       newRender.push(imgInfo)
       ntbrc--
     }
-    console.log(newRender)
     this.setState({
       renderArr: final.concat(newRender),
       upcoming: uCopy,
