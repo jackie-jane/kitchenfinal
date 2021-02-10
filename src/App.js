@@ -1,12 +1,11 @@
 
-import Body from './Components/Layout/Body/Body'
-import Text from './Components/Layout/Footer/text'
+import Clicks from './Components/Clicks/Clicks'
 import './App.css'
 
 function App() {
   return (
     <>
-      <Body />
+      <Clicks />
     </>
   )
 }

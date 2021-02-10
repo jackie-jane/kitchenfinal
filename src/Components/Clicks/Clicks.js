@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { createArray, randomInt } from '../Services/Services'
-import { randomClass, iterateOnClick, toggleAudio } from '../Services/onClickMethods'
-import Audio from '../Components/Audio'
-import './Images.css'
-import Background from '../Layout/Background';
-
+import { randomInt } from '../../Services/Services'
+import ReactAudioPlayer from 'react-audio-player'
+import RendClick from './rendClick'
+import './Clicks.css'
+import { randomClassBackground } from '../../Services/BackgroundServices';
+import Body from '../Layout/Body/Body'
 class Clicks extends Component {
   state = {
     userImgArray: [],
@@ -18,65 +18,92 @@ class Clicks extends Component {
       class: '',
       transform: 'none'
     },
-    audio: false
+    audio: false,
+    play: true,
+    audioFile: ''
   }
 
   componentDidMount() {
-    let response = createArray(100)
-
+    let response = Array.from({ length: 500 }, () => Math.ceil(Math.random()))
+    let final = []
+    let current = ''
+    response.forEach(el => {
+      let batches = ['A', 'A', 'A', 'B', 'B', 'C']
+      let imgBatch = batches[Math.floor(Math.random() * batches.length)]
+      let url = ''
+      if (imgBatch === 'A') {
+        url = Math.floor(Math.random() * 30)
+      } else if (imgBatch === 'B') {
+        url = Math.floor(Math.random() * 43)
+      } else {
+        url = Math.floor(Math.random() * 24)
+      }
+      let img = {
+        url: `media/${imgBatch}/${url}.gif`,
+      }
+      final.push(img)
+    })
+    current = final[0]
+    final.shift()
     this.setState({
-      userImgArray: response.newArray,
-      currentImage: `gifs/${response.currentNum}.gif`,
+      userImgArray: final,
+      currentImage: current,
     })
   }
 
   handleTrack = (e) => {
-    let newClass = randomClass()
+    let imgOb = this.state.currentImage
+    let newClass = randomClassBackground()
     this.setState({
       imageObject: {
-        url: this.state.currentImage,
+        url: imgOb.url,
         x: e.pageX,
         y: e.pageY,
-        class: newClass
+        class: newClass,
       }
     });
   }
 
   handleClick = () => {
-    { this.imageUpload() }
+    this.imageUpload()
+    this.audioPlay()
     let num = randomInt(100)
     if (num <= 10) {
-      { this.gifResize() }
+      this.gifResize()
     } else if (num < 20 && num > 10) {
-      { this.flipGif() }
-    } else if (num < 30 && num >= 20) {
-      { this.audioPlay() }
+      this.flipGif()
     }
   }
 
   imageUpload = () => {
-    let response = iterateOnClick(
-      this.state.imageObject,
-      this.state.renderedArray,
-      this.state.userImgArray)
+    let final = []
+    let rendArr = this.state.renderedArray
+    let upArr = this.state.userImgArray
+    let current = this.state.userImgArray[0]
+    final.push(this.state.imageObject)
+    upArr.shift()
     this.setState({
-      renderedArray: response.newFinalArray,
-      userImgArray: response.newUpcomingArray,
-      currentImage: `gifs/${response.newCurrent}.gif`
+      renderedArray: rendArr.concat(final),
+      userImgArray: upArr,
+      currentImage: current
     })
   }
 
   audioPlay = () => {
-    let response = toggleAudio(this.state.audio)
-    this.setState({
-      audio: response
-    })
+    if (this.state.audio === false && this.state.play === true) {
+      let file = randomInt(7)
+      this.setState({
+        audio: true,
+        audioFile: file,
+        play: false
+      })
+    }
   }
 
   gifResize = () => {
     let imgArray = this.state.renderedArray
     imgArray.forEach(el => {
-      let newClass = randomClass()
+      let newClass = randomClassBackground()
       el.class = newClass
     })
     this.setState({
@@ -94,30 +121,35 @@ class Clicks extends Component {
       renderedArray: imgArray
     })
   }
-
+  onEnded = () => {
+    this.setState({
+      audio: false,
+      play: true
+    })
+  }
   render() {
     return (
-      <div
-        id='userGeneratedImageContainer'
-        onMouseMove={this.handleTrack}
-        onClick={this.handleClick}>
-        <Background />
-        {this.state.audio ? <Audio></Audio> : <></>}
-        {this.state.renderedArray.map(el =>
-          <img
-            src={el.url}
-            className={`${el.class}`}
-            style={{
-              position: "absolute",
-              top: `${el.y}px`,
-              left: `${el.x}px`,
-              transform: el.transform
-            }}
-          />
-        )}
-      </div>
+      <>
+        <Body/>
+        {this.state.audio ?
+          <ReactAudioPlayer
+            src={`media/audio/${this.state.audioFile}.mp3`}
+            autoPlay
+            onEnded={true}
+          /> : null}
+        <div
+          id='userGeneratedImageContainer'
+          onMouseMove={this.handleTrack}
+          onClick={this.handleClick}>
+          {this.state.renderedArray.map(el =>
+            <RendClick
+              {...el}
+            />
+          )}
+        </div>
+      </>
     );
   }
 }
 
-export default Images;
+export default Clicks;

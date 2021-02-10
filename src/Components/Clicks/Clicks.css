@@ -1,0 +1,92 @@
+#userGeneratedImageContainer {
+  position: absolute;
+  background: transparent;
+  min-height: 200vh;
+  min-width: 100vw;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+img {
+  position: "absolute";
+}
+.zero {
+width: 50px;
+}
+.one {
+  width: 100px;
+}
+.two {
+  width: 150px;
+}
+.three {
+  width: 200px;
+}
+.four {
+  width: 250px;
+}
+.five {
+  width: 300px;
+}
+.six {
+  width: 400px;
+}
+.seven {
+  width: 450px;
+}
+.eight {
+  width: 550px;
+}
+.nine {
+  width: 600px;
+}
+.ten {
+  width: 650px;
+}
+.eleven {
+  width: 700px;
+}
+.twelve {
+  height: 50px;
+}
+.thirteen {
+  height: 100px;
+}
+.fourteen {
+  height: 150px;
+}
+.fifteen {
+  height: 200px;
+}
+.sixteen {
+  height: 250px;
+}
+.seventeen {
+  height: 300px;
+}
+.eighteen {
+  height: 350px;
+}
+.nineteen {
+  height: 400px;
+}
+.twenty {
+  height: 450px;
+}
+.twentyone {
+  height: 500px;
+}
+.twentytwo{
+  height: 550px;
+}
+.twentythree{
+  height: 600px;
+}
+.twentyfour{
+  height: 1000px;
+  width: 10;
+}
+.twentyfive{
+  width: 1000px;
+  height: 65px;
+}
