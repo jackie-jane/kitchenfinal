@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Text from './text'
 import './Footer.css'
 
 class Footer extends Component {
@@ -29,11 +30,18 @@ class Footer extends Component {
 
   render() {
     return (
+    <>
       <div
         id='footer'
         on
       >
       </div>
+        {this.state.text ? 
+          <Text />
+          :
+          null
+        }
+    </>
     );
   }
 }

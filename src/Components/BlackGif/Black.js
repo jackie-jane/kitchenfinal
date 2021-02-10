@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import './Black.css'
-
 class Black extends Component {
   state = {
     visible: true,
   }
   componentDidMount() {
-    let x = (Math.ceil(Math.random() * 10) * 6000) + 5000
-    setTimeout(() => { this.toggleVisibility() }, x)
+    let x = Math.ceil(Math.random() * 10) * 1000
+      setInterval(() => { this.toggleVisibility() }, x + 5000)
   }
   toggleVisibility = () => {
-    this.setState({
-      visible: false
-    })
+    const s = this.state
+    if (s.visible === true) {
+      this.setState({
+        visible: false
+      })
+    } else {
+      this.setState({
+        visible: true
+      })
+    }
   }
   render() {
     const s = this.state

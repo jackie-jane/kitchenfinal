@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { createKeyArr } from '../../../Services/BackgroundServices'
 import Aggregate from '../Aggregtate/AggregateOne'
-import LazyLoad from 'react-lazyload'
 class Gator extends Component {
   state = {
     backgroundArr: [],
@@ -46,19 +45,16 @@ class Gator extends Component {
   }
   render() {
     return (
-      <LazyLoad
-        once={true}>
-        <div
-          id='gator'>
-          {this.state.renderArr.map(el =>
-            <Aggregate
-              key={el.key}
-              id={el.id}
-            />
-          )
-          }
-        </div>
-      </LazyLoad>
+      <div
+        id='gator'>
+        {this.state.renderArr.map(el =>
+          <Aggregate
+            key={el.key}
+            id={el.id}
+          />
+        )
+        }
+      </div>
     );
   }
 }

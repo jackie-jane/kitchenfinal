@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Emoji from '../../Emoji/Emoji'
 import Gator from '../Aggregtate/Gator'
 import Footer from '../Footer/Footer'
+import Clicks from '../../Clicks/Clicks'
 import './Body.css'
 
 class Body extends Component {
@@ -11,7 +12,7 @@ class Body extends Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.renderFooter);
-    setTimeout(() => { this.renderFooter() }, 216000)
+    setTimeout(() => { this.renderFooter() }, 90000)
   }
   renderFooter = () => {
     let y = window.pageYOffset
@@ -26,6 +27,7 @@ class Body extends Component {
   render() {
     return (
       <div id='body'>
+        <Clicks />
         <Emoji
           {...this.state.emojiSize}
         />
