@@ -1,7 +1,0 @@
-@font-face {
-  font-family: 'MyFont';
-  src: local('MyFont'), url(fonts/MachineStf.otf) format('otf');
-}
-p {
-  font-family: MyFont;
-}
