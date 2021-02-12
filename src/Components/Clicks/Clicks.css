@@ -9,84 +9,83 @@
 }
 img {
   position: "absolute";
+  z-index: 2;
 }
-.zero {
-width: 50px;
-}
-.one {
-  width: 100px;
-}
-.two {
-  width: 150px;
-}
-.three {
+.Aa {
   width: 200px;
 }
-.four {
+.Ab {
+  width: 220px;
+}
+.Ac {
+  width: 240px;
+}
+.Ad {
   width: 250px;
 }
-.five {
+.Ae {
+  width: 260px;
+}
+.Af {
+  width: 270px;
+}
+.Ag {
+  width: 280px;
+}
+.Ah {
+  width: 290px;
+}
+.Ai {
   width: 300px;
 }
-.six {
-  width: 400px;
+.Aj {
+  width: 310px;
 }
-.seven {
-  width: 450px;
+.Ak {
+  width: 320px;
 }
-.eight {
-  width: 550px;
+.Al {
+  width: 330px;
 }
-.nine {
-  width: 600px;
+.Am {
+  width: 340px;
 }
-.ten {
-  width: 650px;
+.An{
+  width: 350px;
 }
-.eleven {
-  width: 700px;
+.Ao {
+  width: 360px;
 }
-.twelve {
-  height: 50px;
+.Ap {
+  width: 270px;
 }
-.thirteen {
-  height: 100px;
+.Aq{
+  width: 280px;
 }
-.fourteen {
-  height: 150px;
+.Ar {
+  width: 290px;
 }
-.fifteen {
-  height: 200px;
+.As {
+  width: 300px;
 }
-.sixteen {
-  height: 250px;
+.At {
+  width: 310px;
 }
-.seventeen {
-  height: 300px;
+.Au{
+  width: 333px;
 }
-.eighteen {
-  height: 350px;
+.Av {
+  width: 399.99999px;
 }
-.nineteen {
-  height: 400px;
+.Aw{
+  width: 273px;
 }
-.twenty {
-  height: 450px;
+.Ax{
+  width: 260px;
 }
-.twentyone {
-  height: 500px;
+.Ay{
+  width: 289px;
 }
-.twentytwo{
-  height: 550px;
-}
-.twentythree{
-  height: 600px;
-}
-.twentyfour{
-  height: 1000px;
-  width: 10;
-}
-.twentyfive{
-  width: 1000px;
-  height: 65px;
+.Az{
+  width: 200px;
 }

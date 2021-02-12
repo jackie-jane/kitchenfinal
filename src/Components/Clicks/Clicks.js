@@ -17,7 +17,7 @@ class Clicks extends Component {
     let file = pickFile(batch)
     let finalArr = this.state.clickArr
     let imgInfo = {
-      'class': rc,
+      'class': `A${rc}`,
       'url': `media/${batch}/${file}.gif`,
       'x': e.pageX,
       'y': e.pageY,
