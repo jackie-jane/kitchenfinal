@@ -9,7 +9,7 @@ function Splash(props) {
       <Link to='/welcome'>
         <img
           id='splashImg'
-          src='media/polaroid.gif'
+          src='media/0.jpg'
           alt='' />
       </Link>
     </div>
