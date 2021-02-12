@@ -16,4 +16,5 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scrollbar-color: dark;
 }

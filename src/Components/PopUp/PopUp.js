@@ -3,7 +3,6 @@ import NewWindow from 'react-new-window'
 
 
 function Popup(props) {
-  let newFile = Math.floor(Math.random() * 66)
   return (
     <NewWindow>
       <p>
