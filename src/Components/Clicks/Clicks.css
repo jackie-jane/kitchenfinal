@@ -1,16 +1,17 @@
 #userGeneratedImageContainer {
-  position: absolute;
+  position: relative;
   background: transparent;
   min-height: 200vh;
   min-width: 100vw;
   height: auto;
   width: auto;
   overflow: auto;
+  z-index: 4;
 }
 .Aa, .Ab, .Ac, .Ad, .Ae, .Af, .Ag, .Ah, .Ai, .Aj, .Ak,
  .Al, .Am, .An, .Ao, .Ap, .Aq, .Ar, .As, .At, .Au, .Av, .Aw,
  .Ax, .Ay, .Az {
-  position: "absolute";
+  position: relative;
   z-index: 4;
 }
 .Aa {

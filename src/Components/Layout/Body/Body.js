@@ -29,7 +29,7 @@ class Body extends Component {
     return (
       <div id='body'
         onClick={this.handleClick}>
-        <Clicks />
+        <Clicks/>
         <PopUp />
         <Emoji
           {...this.state.emojiSize}
