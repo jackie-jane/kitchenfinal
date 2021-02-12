@@ -92,3 +92,84 @@
 .Az{
   width: 140px;
 }
+
+@media screen and (max-width: 600px) {
+  .Aa {
+    width: 60px;
+  }
+  .Ab {
+    width: 65px;
+  }
+  .Ac {
+    width: 70px;
+  }
+  .Ad {
+    width: 75px;
+  }
+  .Ae {
+    width: 80px;
+  }
+  .Af {
+    width: 85px;
+  }
+  .Ag {
+    width: 90px;
+  }
+  .Ah {
+    width: 95px;
+  }
+  .Ai {
+    width: 100px;
+  }
+  .Aj {
+    width: 105px;
+  }
+  .Ak {
+    width: 110px;
+  }
+  .Al {
+    width: 115px;
+  }
+  .Am {
+    width: 120px;
+  }
+  .An{
+    width: 125px;
+  }
+  .Ao {
+    width: 65px;
+  }
+  .Ap {
+    width: 70px;
+  }
+  .Aq{
+    width: 75px;
+  }
+  .Ar {
+    width: 80px;
+  }
+  .As {
+    width: 85px;
+  }
+  .At {
+    width: 90px;
+  }
+  .Au{
+    width: 95px;
+  }
+  .Av {
+    width: 100px;
+  }
+  .Aw{
+    width: 110px;
+  }
+  .Ax{
+    width: 115px;
+  }
+  .Ay{
+    width: 105px;
+  }
+  .Az{
+    width: 120px;
+  }
+}

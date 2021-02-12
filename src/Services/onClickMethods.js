@@ -12,7 +12,7 @@ export const iterateOnClick = (nextValue, finalArr, userArr) => {
 }
 
 export const bodyClick = (e, renderArray) => {
-  const batches = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D']
+  const batches = ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D', 'E']
   let batch = batches[Math.floor(Math.random() * batches.length)]
   let rc = randomClassBackground()
   let file = pickFile(batch)
@@ -37,8 +37,10 @@ export const pickFile = (b) => {
     file = Math.floor(Math.random() * 43)
   } else if (batch === 'C') {
     file = Math.floor(Math.random() * 24)
-  } else {
+  } else if (batch === 'D') {
     file = Math.floor(Math.random() * 66)
+  } else {
+    file = Math.floor(Math.random() * 13)
   }
   return file
 }

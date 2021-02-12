@@ -1,6 +1,7 @@
 html {
   width: 99vw;
   overflow-x: hidden;
+  background-color: black;
 }
 .body {
   min-height: 100vh;
