@@ -12,7 +12,8 @@ class Clicks extends Component {
 
   componentDidMount() {
     window.addEventListener('click', this.handleClick);
-    setTimeout(() => { this.toggleAudio }, 20000)
+    setTimeout(() => { this.toggleAudio() }, 20000)
+    setTimeout(() => { this.audioSetup() }, 30000)
   }
 
   handleClick = (e) => {
@@ -22,9 +23,9 @@ class Clicks extends Component {
     if (rand === true) {
       let probCalc = additionalMethods()
       if (probCalc === 1) {
-        newArr = gifResize(bodyClick)
+        newArr = gifResize(res)
       } else {
-        newArr = flipGif(bodyClick)
+        newArr = flipGif(res)
       }
       this.setState({
         clickArr: newArr
@@ -37,12 +38,12 @@ class Clicks extends Component {
   }
 
   toggleAudio = () => {
-    let x = Math.ceil(Math.random() * 3) * 10000
-    setInterval(() => { this.audioSetup }, x);
+    let x = Math.ceil(Math.random() * 6) + 10000
+    setInterval(() => { this.audioSetup() }, 60000 + x);
   }
 
   audioSetup = () => {
-    let res = audioPlay()
+    let res = audioPlay(this.state.audio)
     this.setState({
       audio: res.boolean,
       audioFile: res.audioFile

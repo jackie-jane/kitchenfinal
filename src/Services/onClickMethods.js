@@ -1,4 +1,5 @@
 import { randomClassBackground } from './BackgroundServices'
+import { randomInt } from './Services'
 
 export const iterateOnClick = (nextValue, finalArr, userArr) => {
   let value = nextValue;
@@ -50,33 +51,37 @@ export const audioPlay = (boolean) => {
 }
 
 export const gifResize = (renderArray) => {
-  let imgArray = renederArray
-  imgArray.forEach(el => {
-    let newClass = randomClassBackground()
-    let rand = Math.random() < 0.5
-    if (rand === true) {
-      el.class = newClass
-    } else {
-      el.class = `A${newClass}`
-    }
-  })
-  return imgArray
+  let imgArray = renderArray
+  if (imgArray.length > 0) {
+    imgArray.forEach(el => {
+      let newClass = randomClassBackground()
+      let rand = Math.random() < 0.5
+      if (rand === true) {
+        el.class = newClass
+      } else {
+        el.class = `A${newClass}`
+      }
+    })
+    return imgArray
+  }
 }
 
 export const flipGif = (renderArray) => {
-  let imgArray = renderedArray
-  imgArray.forEach(el => {
-    let rotate = randomInt(360)
-    let rand = Math.random() < 0.5
-    if (rand === true) {
-      el.transform = `rotate(${rotate}deg)`
-    }
-  })
-  return imgArray
+  let imgArray = renderArray
+  if (imgArray.length > 0) {
+    imgArray.forEach(el => {
+      let rotate = randomInt(360)
+      let rand = Math.random() < 0.5
+      if (rand === true) {
+        el.transform = `rotate(${rotate}deg)`
+      }
+    })
+    return imgArray
+  }
 }
 
 export const additionalMethods = () => {
-  methods = [1, 2]
+  const methods = [1, 2]
   let method = methods[Math.floor(Math.random() * methods.length)]
   return method
 }
