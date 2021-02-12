@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/yns4wlf.css");
 #footer {
 position: relative;
 height: 50vh;
@@ -10,11 +11,11 @@ box-shadow: -1px -1px 25px grey;
 }
 
 #text {
+  font-family: ff-seria-sans, sans-serif;
   height: 25vh;
   width: 25vw;
   background: white;
-  opacity: 30%;
-  font-size: large;
+  font-size: 32px;
   color: black;
   position: fixed;
   top: 50vh;

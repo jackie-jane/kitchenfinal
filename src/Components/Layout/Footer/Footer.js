@@ -22,10 +22,14 @@ class Footer extends Component {
         left: 0,
         behavior: 'smooth'
       });
+      setTimeout(() => { this.forceRefresh() }, 20000)
       this.setState({
         text: true
       })
     }
+  }
+  forceRefresh() {
+    window.location.reload(false);
   }
 
   render() {
