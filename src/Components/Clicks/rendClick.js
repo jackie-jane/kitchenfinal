@@ -25,18 +25,26 @@ class RendClick extends Component {
       <>
         {this.state.one ?
           <Draggable>
-            <img
-              // id="layout" draggable="false"
-              src={this.props.url}
-              className={this.props.class}
-              alt=''
+            <div
               style={{
                 position: 'absolute',
-                top: `${this.props.y}px`,
-                left: `${this.props.x}px`,
-                transform: `${this.props.transform}`
-              }}
-            />
+                zIndex: 4
+              }} >
+
+              <img
+                id="layout" draggable="false"
+                src={this.props.url}
+                className={this.props.class}
+                alt=''
+                style={{
+                  position: 'absolute',
+                  top: `${this.props.y}px`,
+                  left: `${this.props.x}px`,
+                  transform: `${this.props.transform}`,
+                  zIndex: 4
+                }}
+              />
+            </div>
           </Draggable>
           :
           null
