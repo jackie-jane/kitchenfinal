@@ -5,6 +5,7 @@ import ReactAudioPlayer from 'react-audio-player'
 
 class Clicks extends Component {
   state = {
+    clicks: false,
     clickArr: [],
     audio: false,
     audioFile: ''
@@ -17,23 +18,29 @@ class Clicks extends Component {
   }
 
   handleClick = (e) => {
-    let res = bodyClick(e, this.state.clickArr)
-    let rand = Math.random() < 0.5
-    let newArr = []
-    if (rand === true) {
-      let probCalc = additionalMethods()
-      if (probCalc === 1) {
-        newArr = gifResize(res)
-      } else {
-        newArr = flipGif(res)
-      }
+    if (this.state.clicks === false) {
       this.setState({
-        clickArr: newArr
+        clicks: true
       })
     } else {
-      this.setState({
-        clickArr: res
-      })
+      let res = bodyClick(e, this.state.clickArr)
+      let rand = Math.random() < 0.5
+      let newArr = []
+      if (rand === true) {
+        let probCalc = additionalMethods()
+        if (probCalc === 1) {
+          newArr = gifResize(res)
+        } else {
+          newArr = flipGif(res)
+        }
+        this.setState({
+          clickArr: newArr
+        })
+      } else {
+        this.setState({
+          clickArr: res
+        })
+      }
     }
   }
 

@@ -26,7 +26,7 @@ class Body extends Component {
   }
   render() {
     return (
-      <div id='body'
+      <div className='body'
         onClick={this.handleClick}>
         <Clicks />
         <Emoji
