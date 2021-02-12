@@ -28,7 +28,7 @@ class Body extends Component {
     return (
       <div id='body'
         onClick={this.handleClick}>
-        <Clicks/>
+        <Clicks />
         <Emoji
           {...this.state.emojiSize}
         />

@@ -11,13 +11,13 @@ class Clicks extends Component {
     window.addEventListener('click', this.handleClick);
   }
   handleClick = (e) => {
-    const batches = ['A', 'A', 'A', 'B', 'B', 'C']
+    const batches = ['A', 'A', 'A', 'B', 'B', 'C', 'C']
     let batch = batches[Math.floor(Math.random() * batches.length)]
     let rc = randomClassBackground()
     let file = pickFile(batch)
     let finalArr = this.state.clickArr
     let imgInfo = {
-      'class': rc,
+      'class': `A${rc}`,
       'url': `media/${batch}/${file}.gif`,
       'x': e.pageX,
       'y': e.pageY,

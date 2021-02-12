@@ -31,7 +31,8 @@ class RendClick extends Component {
             style={{
               position: 'absolute',
               top: `${this.props.y}px`,
-              left: `${this.props.x}px`
+              left: `${this.props.x}px`,
+              zIndex: 3,
             }}
           />
           :

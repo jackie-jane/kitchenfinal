@@ -12,7 +12,7 @@ flex-wrap: wrap;
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
   margin-left: -1vw; /* gutter size offset */
-  height: 50vh;
+  height: 75vh;
   width: 50vw;
   overflow: hidden
 }

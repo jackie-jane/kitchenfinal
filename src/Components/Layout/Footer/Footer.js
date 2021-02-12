@@ -16,7 +16,7 @@ class Footer extends Component {
   autoScroll = () => {
     let y = window.pageYOffset
     let w = window.innerHeight
-    if ( (w * 3) - y < w ) {
+    if ((w * 3) - y < w) {
       window.scrollTo({
         top: 0,
         left: 0,
@@ -30,18 +30,18 @@ class Footer extends Component {
 
   render() {
     return (
-    <>
-      <div
-        id='footer'
-        on
-      >
-      </div>
-        {this.state.text ? 
+      <>
+        <div
+          id='footer'
+          on
+        >
+        </div>
+        {this.state.text ?
           <Text />
           :
           null
         }
-    </>
+      </>
     );
   }
 }

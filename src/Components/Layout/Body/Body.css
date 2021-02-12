@@ -1,7 +1,9 @@
-#body {
-  /* position: absolute; */
-  min-height: 100vh;
+html {
   width: 99vw;
+  overflow-x: hidden;
+}
+#body {
+  min-height: 100vh;
   max-height: 600vh;
   top: 0;
   left: 0;
@@ -14,4 +16,5 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scrollbar-color: dark;
 }

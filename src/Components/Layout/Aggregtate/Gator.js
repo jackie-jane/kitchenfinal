@@ -8,7 +8,7 @@ class Gator extends Component {
   }
   componentDidMount() {
     let rendArr = createKeyArr(1212, 4)
-    let backArr = createKeyArr(1111, 8)
+    let backArr = createKeyArr(1111, 6)
     let finalRend = []
     let finalBack = []
     rendArr.forEach(el => {
