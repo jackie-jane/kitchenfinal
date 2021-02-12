@@ -4,7 +4,6 @@ import Gator from '../Aggregtate/Gator'
 import Footer from '../Footer/Footer'
 import './Body.css'
 import Clicks from '../../Clicks/Clicks';
-import PopUp from '../../PopUp/PopUp'
 
 class Body extends Component {
   state = {
@@ -29,8 +28,7 @@ class Body extends Component {
     return (
       <div id='body'
         onClick={this.handleClick}>
-        <Clicks/>
-        <PopUp />
+        <Clicks />
         <Emoji
           {...this.state.emojiSize}
         />
