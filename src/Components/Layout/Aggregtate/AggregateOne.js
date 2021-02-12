@@ -20,7 +20,7 @@ class Aggregate extends Component {
   }
 
   handleUpdate = () => {
-    if (this.state.renderArr.length < 20) {
+    if (this.state.renderArr.length < 10) {
       const s = this.state
       let ntbr = Math.ceil((Math.random() * 3)) + s.multiplier
       let ntbrc = ntbr
