@@ -19,7 +19,7 @@ export const bodyClick = (e, renderArray) => {
   let finalArr = renderArray
   let imgInfo = {
     'class': `A${rc}`,
-    'url': `media/${batch}/${file}.gif`,
+    'url': `./media/${batch}/${file}.gif`,
     'x': e.pageX,
     'y': e.pageY,
     'transform': 'none'
