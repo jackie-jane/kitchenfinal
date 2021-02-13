@@ -32,9 +32,9 @@ export const pickFile = (b) => {
   let batch = b
   let file = ''
   if (batch === 'A') {
-    file = Math.floor(Math.random() * 30)
+    file = Math.floor(Math.random() * 29)
   } else if (batch === 'B') {
-    file = Math.floor(Math.random() * 43)
+    file = Math.floor(Math.random() * 41)
   } else if (batch === 'C') {
     file = Math.floor(Math.random() * 24)
   } else if (batch === 'D') {
