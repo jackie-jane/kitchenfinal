@@ -12,18 +12,19 @@ box-shadow: -1px -1px 25px grey;
 
 #text {
   font-family: ff-seria-sans, sans-serif;
-  height: 25vh;
-  width: 75vw;
+  min-height: 10vh;
+  height:fit-content;
+  width: fit-content;
   background: white;
-  font-size: 32px;
+  font-size: 18px;
   color: black;
-  position: fixed;
+  position: absolute;
   top: 50vh;
   left: 50vw;
   z-index: 10;
 }
 @media screen and (max-width: 600px) {
   #text {
-    font-size: 16px;
+    font-size: 13px;
   }
 }

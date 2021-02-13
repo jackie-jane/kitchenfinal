@@ -7,10 +7,13 @@ function text(props) {
     <Draggable>
       <div
         id='text'>
-        this site is a potential theater of dispersed fantasias, ruptures
-and un\assemblies. images move, swarm, expire. remains
-under construction. developed by jackie-jane, ryan holsopple &
-niall jones.
+        this site is a potential theater of dispersed <br />
+        fantasias, ruptures and un\assemblies. <br />
+        images move, swarm, expire. <br />
+        remains under construction. <br />
+        developed by jackie-jane, <br />
+        ryan holsopple and <br />
+        niall jones.
       </div>
     </Draggable>
   );
