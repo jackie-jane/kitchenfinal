@@ -40,7 +40,7 @@ export const pickFile = (b) => {
   } else if (batch === 'D') {
     file = Math.floor(Math.random() * 66)
   } else {
-    file = Math.floor(Math.random() * 13)
+    file = Math.floor(Math.random() * 17)
   }
   return file
 }
